@@ -1,20 +1,31 @@
+/* General Body Styles */
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     background-color: #f8f1e9;
     color: #2d1b1b;
+    margin-bottom: 60px; 
+    padding-top: 100px; 
 }
 
+/* Navigation Bar Styles */
 .navbar {
     background: linear-gradient(90deg, #2d1b1b 0%, #4a2c2a 100%);
-    padding: 1rem 0;
+    padding: 0;
+    height: 100px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.navbar-brand {
+    margin-left: 0;
+    padding-left: 0;
+}
+
 .navbar-brand .logo-img {
-    height: 50px;
+    height: 100px;
     width: auto;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .navbar-brand:hover .logo-img {
@@ -32,9 +43,36 @@ body {
     color: #e6b800 !important;
 }
 
+/* Hamburger Menu */
+.navbar-collapse {
+    background: linear-gradient(90deg, #2d1b1b 0%, #4a2c2a 100%);
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Position humberger menu aligned to the right */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100px; 
+        right: 0; 
+        width: 250px; 
+        left: auto; 
+        z-index: 1000; 
+    }
+    .navbar-nav {
+        text-align: left; 
+    }
+    .nav-link {
+        padding: 0.75rem 1rem; 
+    }
+}
+
+/* Swiper Carousel Styles */
 .swiper {
     width: 100%;
-    height: 60vh; /* Reduced from 100vh to 60vh for better balance */
+    height: 50vh;
 }
 
 .swiper-slide {
@@ -61,12 +99,12 @@ body {
 
 .carousel-caption h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem; /* Adjusted for smaller carousel */
+    font-size: 2.5rem;
     font-weight: 700;
 }
 
 .carousel-caption p {
-    font-size: 1.2rem; /* Adjusted for smaller carousel */
+    font-size: 1.2rem;
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -103,6 +141,7 @@ body {
     background: #e6b800;
 }
 
+/* Menu Section Styles */
 #menu {
     background-color: #fff;
 }
@@ -148,12 +187,25 @@ body {
     border-radius: 10px;
 }
 
+/* Form Styles (Reservation, Contact, Login ) */
 .reservation-form, #contact-form {
     max-width: 500px;
     background: #fff;
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(45, 27, 27, 0.1);
+}
+
+.login-prompt {
+    max-width: 500px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(45, 27, 27, 0.1);
+}
+
+.login-prompt i {
+    color: #e6b800;
 }
 
 .form-control {
@@ -172,6 +224,7 @@ body {
     background-color: #1f1212;
 }
 
+/* Cart Styles */
 .cart-container {
     position: fixed;
     right: 20px;
@@ -188,21 +241,28 @@ body {
     color: #2d1b1b;
 }
 
+/* Footer Styles */
 footer {
     background: linear-gradient(90deg, #2d1b1b 0%, #4a2c2a 100%);
     color: #e6b800;
     font-weight: 600;
 }
 
+/* Login/Register Page Styles */
 #login {
     background-color: #f8f1e9;
 }
 
-.alert-danger {
+.alert-danger, .alert-success {
     background-color: #ffe6e6;
     color: #2d1b1b;
 }
 
+.alert-success {
+    background-color: #e6ffe6;
+}
+
+/* Admin Section*/
 .table {
     background: #fff;
     border-radius: 15px;

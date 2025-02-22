@@ -1,4 +1,6 @@
+// Document Ready Event Listener
 document.addEventListener('DOMContentLoaded', () => {
+    // Swiper Carousel Initialization (Home Section)
     const swiper = new Swiper('.mySwiper', {
         loop: true,
         autoplay: {
@@ -15,8 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
+    // Menu Fetching Function Call
     fetchMenuItems();
 
+    // Contact Form Submission Handler
     const contactForm = document.getElementById('contact-form');
     if(contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -25,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Reservation Form Submission Handler
     const reservationForm = document.getElementById('reservation-form');
     if(reservationForm) {
         reservationForm.addEventListener('submit', (e) => {
@@ -35,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Checkout Button Handler
     const checkoutBtn = document.getElementById('checkout');
     if(checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
@@ -50,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Menu Fetching Function
 function fetchMenuItems() {
     fetch('get_menu.php')
         .then(response => response.json())
@@ -62,7 +69,7 @@ function fetchMenuItems() {
                     <img src="${item.image}" alt="${item.name}" class="img-fluid rounded mb-3">
                     <h3>${item.name}</h3>
                     <p>${item.description}</p>
-                    <p>$${item.price}</p>
+                    <p>${item.price} DA</p>
                     <button class="btn btn-primary" onclick="addToFavorites(${item.id})">Add to Favorites</button>
                     <button class="btn btn-primary mt-2" onclick="addToCart(${item.id}, 1)">Add to Cart</button>
                 `;
@@ -71,6 +78,7 @@ function fetchMenuItems() {
         });
 }
 
+// Add to Favorites Function
 function addToFavorites(itemId) {
     fetch('add_favorite.php', {
         method: 'POST',
@@ -84,6 +92,7 @@ function addToFavorites(itemId) {
     });
 }
 
+// Add to Cart Function
 function addToCart(itemId, quantity) {
     fetch('add_to_cart.php', {
         method: 'POST',
@@ -96,6 +105,7 @@ function addToCart(itemId, quantity) {
     });
 }
 
+// Make Reservation Function
 function makeReservation(date, guests) {
     fetch('make_reservation.php', {
         method: 'POST',
@@ -109,6 +119,7 @@ function makeReservation(date, guests) {
     });
 }
 
+// Update Cart Display Function
 function updateCartDisplay() {
     window.location.reload();
 }

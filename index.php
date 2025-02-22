@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Head Section: Metadata and Styles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Top</title>
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation Bar Section -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.php">
@@ -44,6 +46,7 @@
         </div>
     </nav>
 
+    <!-- Home Section: Swiper Carousel -->
     <section id="home">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -58,14 +61,14 @@
                     <img src="images/dish2.jpg" alt="Steak Supreme">
                     <div class="carousel-caption">
                         <h1>Saudi Mandi</h1>
-                        <p>Super delicious</p>
+                        <p>super delicious</p>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <img src="images/dish3.jpg" alt="Pasta Primavera">
                     <div class="carousel-caption">
                         <h1>Algerian Mhajeb</h1>
-                        <p>hot and tasty</p>
+                        <p>so hot and tasty</p>
                     </div>
                 </div>
             </div>
@@ -75,6 +78,7 @@
         </div>
     </section>
 
+    <!-- Menu Section -->
     <section id="menu" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">Our Menu</h2>
@@ -82,10 +86,12 @@
         </div>
     </section>
 
+    <!-- Reservation Section -->
     <section id="reservation" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-4">Make a Reservation</h2>
             <?php if(isset($_SESSION['user_id'])): ?>
+                <!-- Reservation Form for Logged-in Users -->
                 <form id="reservation-form" class="reservation-form mx-auto">
                     <div class="mb-3">
                         <input type="datetime-local" class="form-control" name="date_time" required>
@@ -96,11 +102,25 @@
                     <button type="submit" class="btn btn-primary w-100">Book Now</button>
                 </form>
             <?php else: ?>
-                <p class="text-center">Please <a href="login.php" class="text-primary">login</a> to make a reservation.</p>
+                <!-- Login Prompt for Non-Logged-in Users -->
+                <div class="login-prompt mx-auto text-center">
+                    <i class="fas fa-sign-in-alt fa-2x mb-3"></i>
+                    <p>Please log in to make a reservation</p>
+                    <form method="POST" action="login.php" class="mx-auto" style="max-width: 300px;">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
             <?php endif; ?>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">Contact Us</h2>
@@ -119,16 +139,19 @@
         </div>
     </section>
 
+    <!-- Cart Section -->
     <div class="cart-container" id="cart-container">
         <h3>Cart</h3>
         <div id="cart-items"></div>
         <button id="checkout" class="btn btn-primary w-100 mt-3">Checkout</button>
     </div>
 
+    <!-- Footer Section -->
     <footer class="py-3 text-center">
         <p>© 2025 High Top. All rights reserved.</p>
     </footer>
 
+    <!-- Scripts Section -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>

@@ -1,7 +1,9 @@
 <?php
+// Session and Header Setup Section
 session_start();
 header('Content-Type: application/json');
 
+// Checkout Handling Section
 if(!isset($_SESSION['user_id']) || !isset($_SESSION['cart'])) {
     echo json_encode(['success' => false, 'message' => 'No cart or not logged in']);
     exit();

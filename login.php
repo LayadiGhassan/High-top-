@@ -5,6 +5,7 @@ if(isset($_SESSION['user_id'])) {
     exit();
 }
 
+// Login Handling Section
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pdo = new PDO("mysql:host=localhost;dbname=restaurant_db", "root", "");
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
@@ -23,11 +24,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Head Section: Metadata and Styles -->
     <title>Login - High Top</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation Bar Section -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.php">
@@ -48,10 +51,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </nav>
 
-    <section id="login" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Login</h2>
-            <?php if(isset($error)) echo "<p class='alert alert-danger text-center'>$error</p>"; ?>
+    <!-- Login Form Section -->
+    <section id="login" class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container text-center">
+            <h2 class="mb-4">Login</h2>
+            <?php if(isset($error)) echo "<p class='alert alert-danger'>$error</p>"; ?>
             <form method="POST" class="mx-auto" style="max-width: 400px;">
                 <div class="mb-3">
                     <input type="text" class="form-control" name="username" placeholder="Username" required>
@@ -60,15 +64,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="password" class="form-control" name="password" placeholder="Password" required>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Login</button>
-                <p class="text-center mt-3">Not registered? <a href="register.php" class="text-primary">Register here</a></p>
+                <p class="mt-3">Not registered? <a href="register.php" class="text-primary">Register here</a></p>
             </form>
         </div>
     </section>
 
-    <footer class="py-3 text-center">
+    <!-- Footer Section -->
+    <footer class="py-3 text-center fixed-bottom">
         <p>© 2025 High Top. All rights reserved.</p>
     </footer>
 
+    <!-- Scripts Section -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

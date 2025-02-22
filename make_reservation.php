@@ -1,7 +1,9 @@
 <?php
+// Session and Header Setup Section
 session_start();
 header('Content-Type: application/json');
 
+// Reservation Handling Section
 if(!isset($_SESSION['user_id'])) {
     echo json_encode(['success' => false, 'message' => 'Not logged in']);
     exit();
