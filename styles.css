@@ -1,0 +1,214 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f1e9;
+    color: #2d1b1b;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #2d1b1b 0%, #4a2c2a 100%);
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand .logo-img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .logo-img {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: #f8f1e9 !important;
+    font-weight: 600;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #e6b800 !important;
+}
+
+.swiper {
+    width: 100%;
+    height: 60vh; /* Reduced from 100vh to 60vh for better balance */
+}
+
+.swiper-slide {
+    position: relative;
+    text-align: center;
+    background: #000;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem; /* Adjusted for smaller carousel */
+    font-weight: 700;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem; /* Adjusted for smaller carousel */
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #e6b800;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background: rgba(230, 184, 0, 0.9);
+    transform: scale(1.1);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 18px;
+    color: #2d1b1b;
+}
+
+.swiper-button-next::after {
+    content: '\f054';
+}
+
+.swiper-button-prev::after {
+    content: '\f053';
+}
+
+.swiper-pagination-bullet-active {
+    background: #e6b800;
+}
+
+#menu {
+    background-color: #fff;
+}
+
+.menu-item {
+    background: #f8f1e9;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(45, 27, 27, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(45, 27, 27, 0.15);
+}
+
+.menu-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2d1b1b;
+}
+
+.menu-item p {
+    color: #5a3a38;
+}
+
+.menu-item .btn {
+    background-color: #e6b800;
+    border: none;
+    font-weight: 600;
+}
+
+.menu-item .btn:hover {
+    background-color: #cc9900;
+}
+
+.menu-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.reservation-form, #contact-form {
+    max-width: 500px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(45, 27, 27, 0.1);
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #e6b800;
+}
+
+.btn-primary {
+    background-color: #2d1b1b;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1f1212;
+}
+
+.cart-container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(45, 27, 27, 0.2);
+    width: 300px;
+}
+
+.cart-container h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2d1b1b;
+}
+
+footer {
+    background: linear-gradient(90deg, #2d1b1b 0%, #4a2c2a 100%);
+    color: #e6b800;
+    font-weight: 600;
+}
+
+#login {
+    background-color: #f8f1e9;
+}
+
+.alert-danger {
+    background-color: #ffe6e6;
+    color: #2d1b1b;
+}
+
+.table {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
