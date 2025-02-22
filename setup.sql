@@ -71,4 +71,4 @@ INSERT INTO menu_items (name, description, price, category, image) VALUES
 ('Edyptian Koshari', 'no comment - -', 300, 'Main', 'images/dish4.jpg');
 
 INSERT INTO users (username, email, password, is_admin) VALUES
-('admin', 'admin@hightop.com', '$2y$10$KZ9Yq2bQJ5nW8Qz8z8Qz8e3z8Qz8z8Qz8z8Qz8z8Qz8z8Qz8z8Qz8', 1);
+('admin', 'admin@hightop.com', '$2y$10$88jPYS57mATVXFSXiU8pheZHJl9oa6CuYDH0mYidhSe', 1);
