@@ -189,7 +189,7 @@ $contacts = $pdo->query("SELECT * FROM contacts LIMIT $contact_offset, $items_pe
                             <td><?php echo $item['id']; ?></td>
                             <td><?php echo $item['name']; ?></td>
                             <td><?php echo $item['description']; ?></td>
-                            <td>$<?php echo number_format($item['price'], 2); ?></td>
+                            <td><?php echo number_format($item['price'], 2); ?> DA</td>
                             <td><?php echo $item['category']; ?></td>
                             <td><img src="<?php echo $item['image']; ?>" alt="<?php echo $item['name']; ?>" style="max-height: 50px;"></td>
                             <td><a href="admin.php?delete_item=<?php echo $item['id']; ?>&user_page=<?php echo $user_page; ?>&menu_page=<?php echo $menu_page; ?>&order_page=<?php echo $order_page; ?>&reservation_page=<?php echo $reservation_page; ?>&contact_page=<?php echo $contact_page; ?>" class="btn btn-danger btn-sm">Delete</a></td>
@@ -227,7 +227,7 @@ $contacts = $pdo->query("SELECT * FROM contacts LIMIT $contact_offset, $items_pe
                         <tr>
                             <td><?php echo $order['id']; ?></td>
                             <td><?php echo $order['username']; ?></td>
-                            <td>$<?php echo number_format($order['total'], 2); ?></td>
+                            <td><?php echo number_format($order['total'], 2); ?> DA</td>
                             <td><?php echo $order['status']; ?></td>
                             <td><?php echo $order['created_at']; ?></td>
                         </tr>

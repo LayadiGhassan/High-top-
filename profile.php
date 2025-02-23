@@ -99,7 +99,7 @@ $orders = $order_stmt->fetchAll();
                             <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['name']; ?>" class="img-fluid rounded mb-3" style="max-height: 100px;">
                             <h4><?php echo $item['name']; ?></h4>
                             <p><?php echo $item['description']; ?></p>
-                            <p>$<?php echo number_format($item['price'], 2); ?></p>
+                            <p><?php echo number_format($item['price'], 2); ?> DA</p>
                             <a href="profile.php?remove_favorite=<?php echo $item['id']; ?>" class="btn btn-danger btn-sm">Remove</a>
                         </div>
                     <?php endforeach; ?>
@@ -110,7 +110,7 @@ $orders = $order_stmt->fetchAll();
                     <?php foreach($orders as $order): ?>
                         <div class="menu-item mb-3 p-3">
                             <img src="<?php echo $order['image']; ?>" alt="<?php echo $order['name']; ?>" class="img-fluid rounded mb-3" style="max-height: 100px;">
-                            <p><?php echo $order['name']; ?> - Quantity: <?php echo $order['quantity']; ?> - $<?php echo number_format($order['price'], 2); ?></p>
+                            <p><?php echo $order['name']; ?> - Quantity: <?php echo $order['quantity']; ?> - <?php echo number_format($order['price'], 2); ?> DA</p>
                             <p>Order Date: <?php echo $order['created_at']; ?></p>
                         </div>
                     <?php endforeach; ?>
