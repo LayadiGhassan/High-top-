@@ -68,7 +68,7 @@ INSERT INTO menu_items (name, description, price, category, image) VALUES
 ('Saudi Mandi', ' super delicious', 1000, 'Main', 'images/dish2.jpg'),
 ('Jordan Mansaf', 'yam yam', 1000, 'Main', 'images/dish5.jpg'),
 ('Algerian Mhajeb', 'delicious', 500, 'Main', 'images/dish3.jpg'),
-('Edyptian Koshari', 'no comment - -', 300, 'Main', 'images/dish4.jpg');
+('Egyptian Koshari', 'no comment - -', 300, 'Main', 'images/dish4.jpg');
 
 INSERT INTO users (username, email, password, is_admin) VALUES
-('admin', 'admin@hightop.com', '$2y$10$KZ9Yq2bQJ5nW8Qz8z8Qz8e3z8Qz8z8Qz8z8Qz8z8Qz8z8Qz8z8Qz8', 1);
+('admin', 'admin@hightop.com', '$2y$10$4vbgvtnPoEmjUrk5dw0NquPRs9yfH.SZ.qdUMIPr4K7', 1);
