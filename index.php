@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Head Section: Metadata and Styles -->
+    <!-- Head Section -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Top</title>
@@ -102,7 +102,7 @@
                     <button type="submit" class="btn btn-primary w-100">Book Now</button>
                 </form>
             <?php else: ?>
-                <!-- Login Prompt for Non-Logged-in Users -->
+                <!-- Login for Non-Logged-in Users -->
                 <div class="login-prompt mx-auto text-center">
                     <i class="fas fa-sign-in-alt fa-2x mb-3"></i>
                     <p>Please log in to make a reservation</p>

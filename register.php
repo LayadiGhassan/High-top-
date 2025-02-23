@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['user_id'])) {
-    header("Location: profile.php");
+    header("Location: index.php");
     exit();
 }
 
@@ -13,9 +13,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     try {
+        // Insert the new user into the database
         $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
         $stmt->execute([$username, $email, $password]);
-        header("Location: login.php");
+        
+        // Get the newly created user's ID and log them in
+        $user_id = $pdo->lastInsertId();
+        $_SESSION['user_id'] = $user_id;
+        
+        // Redirect to the home page as logged in
+        header("Location: index.php");
         exit();
     } catch(PDOException $e) {
         $error = "Error: " . $e->getMessage();
@@ -25,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Head Section: Metadata and Styles -->
+    <!-- Head Section -->
     <title>Register - High Top</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -33,22 +40,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <!-- Navigation Bar Section -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.php">
-                <img src="images/logo.png" alt="High Top Logo" class="logo-img">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.php#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php#menu">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php#reservation">Reservation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                </ul>
-            </div>
+        <!-- logo to align to the far left -->
+        <a class="navbar-brand" href="index.php">
+            <img src="images/logo.png" alt="High Top Logo" class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.php#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php#menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php#reservation">Reservation</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+            </ul>
         </div>
     </nav>
 

@@ -36,7 +36,7 @@ $orders = $order_stmt->fetchAll();
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Head Section: Metadata and Styles -->
+    <!-- Head Section -->
     <title>Profile - High Top</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
